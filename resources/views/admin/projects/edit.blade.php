@@ -134,6 +134,12 @@
             <input type="text" class="form-control" id="floatingInput" placeholder="Change client name" name="client" value="{{ $project->client }}">
             <label for="floatingInput">Client Name</label>
         </div>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type_id">
+          <option value="">Select a type</option>
+          @foreach ($types as $typeEl)
+            <option value="{{ $typeEl->id }}" {{ old( 'type_id', $project->type_id ) == $typeEl->id ? 'selected' : '' }} >{{ $typeEl->name_type }}</option>
+          @endforeach
+        </select>
         <button type="submit" class="btn btn-primary">Edit project</button>
     </form>
   </div>

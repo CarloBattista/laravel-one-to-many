@@ -10,13 +10,4 @@ return [
             "client" => "io",
         ],
     ],
-
-    'typeDatas' => [
-        [
-            "FrontEnd",
-            "Backend",
-            "FullStack",
-            "Design",
-        ],
-    ],
 ];

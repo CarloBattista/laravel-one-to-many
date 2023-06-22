@@ -17,11 +17,18 @@ class TypeSeeder extends Seeder
     public function run()
     {
 
-        $typeArray = config('projects.typeDatas');
+        // $typeArray = config('projects.typeDatas');
 
-        foreach ($typeArray as $elem) {
+        $typeDatas = [
+            "FrontEnd",
+            "Backend",
+            "FullStack",
+            "Design",
+        ];
+
+        foreach ($typeDatas as $elem) {
             $newType = new Type();
-            $newType->name_type = $elem['name_type'];
+            $newType->name_type = $elem;
             $newType->save();
         }
         

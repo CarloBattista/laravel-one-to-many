@@ -133,6 +133,12 @@
             <input type="text" class="form-control" id="floatingInput" placeholder="Change client name" name="client">
             <label for="floatingInput">Client Name</label>
         </div>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type_id">
+          <option value="">Select a type</option>
+          @foreach ($types as $typeEl)
+            <option value="{{ $typeEl->id }}">{{ $typeEl->name_type }}</option>
+          @endforeach
+        </select>
         <button type="submit" class="btn btn-primary">Create project</button>
     </form>
   </div>

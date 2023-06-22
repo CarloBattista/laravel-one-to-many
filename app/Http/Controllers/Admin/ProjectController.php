@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Admin\Project;
+use App\Models\Admin\Type;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -32,8 +33,9 @@ class ProjectController extends Controller
     public function create()
     {
         $project = Project::all();
+        $types = Type::all();
 
-        return view('admin.projects.create', compact('project'));
+        return view('admin.projects.create', compact(['project', 'types']));
     }
 
     /**
@@ -60,7 +62,6 @@ class ProjectController extends Controller
         $new_Project->save();
 
 
-
         return redirect()->route('admin.projects.index');
     }
 
@@ -85,7 +86,9 @@ class ProjectController extends Controller
     public function edit($id)
     {
         $project = Project::findOrFail($id);
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact(['project', 'types']));
     }
 
     /**
