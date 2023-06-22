@@ -156,6 +156,7 @@
     <h4>{{ $project->title_project }}</h4>
     <h6><span class="text-secondary">For:</span> {{ $project->client }}</h6>
     <p>{{ $project->description_project }}</p>
+    <p><span class="text-secondary">Type:</span> {{ $project->type->name_type }}</p>
   </div>
 </div>
 @endsection
